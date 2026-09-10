@@ -21,10 +21,10 @@ export function Footer() {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-y-8 items-center text-subtitle">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-y-8 text-tech-3 w-full">
 
-                    <div className="flex items-center gap-4">
-                        <div className="relative w-12 h-12 shrink-0">
+                    <div className="flex items-center gap-4 shrink-0">
+                        <div className="relative w-12 h-12 shrink-0 border border-primary">
                             <Image
                                 src={pixelIcon}
                                 alt="Jeisi Rosales Logo"
@@ -33,27 +33,28 @@ export function Footer() {
                                 priority
                             />
                         </div>
-                        <div className="flex flex-col">
+                        <div className="flex flex-col text-left">
                             <span>Nueva Esparta</span>
                             <span>Venezuela</span>
                         </div>
                     </div>
 
-                    <div className="flex flex-col md:flex-row md:flex-wrap gap-4 md:gap-6 items-center md:items-start">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
                         {FOOTER_INFO.links.map((link) => (
                             <Link
                                 key={link.label}
                                 href={link.href}
-                                className="hover:text-accent transition-transform active:scale-95 duration-100"
+                                className="hover:text-accent transition-transform active:scale-95 duration-100 whitespace-nowrap"
                             >
                                 {link.label}
                             </Link>
                         ))}
                     </div>
 
-                    <div className="text-center md:text-right whitespace-pre-line">
-                        Hecho con amor, YouTube Music <br /> e inspiración a las 2am
+                    <div className="text-center md:text-right whitespace-pre-line shrink-0">
+                        Hecho con amor y con <br />el sacrificio de mi espalda.
                     </div>
+
                 </div>
             </div>
         </footer>
