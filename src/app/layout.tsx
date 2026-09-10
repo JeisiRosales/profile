@@ -1,7 +1,8 @@
-// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Syne, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -16,8 +17,12 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/assets/logos/pixel-icon.webp",
+    apple: "/assets/logos/pixel-icon.webp",
+  },
   title: "Desarollador de software en Nueva Esparta - Jeisi Rosales",
-  description: "Desarrollo web de alto rendimiento y arquitectura B2B.",
+  description: "Jeisi Rosales | Desarrollador Full-Stack. Construcción de sistemas web escalables, soluciones digitales para negocios y aplicaciones de alto rendimiento.",
   keywords: [
     "Desarrollador de software",
     "Desarrollo web",
@@ -35,7 +40,9 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${syne.variable} ${jetbrainsMono.variable}`}>
       <body>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -9,6 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@iconify-react/pixel": "^1.0.3",
+    "@iconify/react": "^6.0.2",
+    "framer-motion": "^13.2.0",
     "next": "16.3.4",
     "react": "19.2.8",
     "react-dom": "19.2.8"

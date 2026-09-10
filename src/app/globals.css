@@ -12,24 +12,98 @@
   --font-sans: var(--font-syne), sans-serif;
   --font-mono: var(--font-jetbrains), monospace;
 
-  /* 3. TAMAÑOS DE TEXTO PERSONALIZADOS (FIGMA) */
-  --text-display: 88px;
-  --text-h1: 64px;
-  --text-h2: 40px;
-  --text-h3: 24px;
-  --text-tech-1: 32px;
-  --text-tech-2: 24px;
-  --text-tech-3: 16px;
-  --text-lead: 20px;
-  --text-base: 16px;
-  --text-subtitle: 12px;
+  /* 3. TAMAÑOS BASE (Matemática pura) */
+  --size-display: clamp(3rem, 5vw + 1rem, 5.5rem);
+  --size-h1: clamp(2.25rem, 4vw + 1rem, 4rem);
+  --size-h2: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
+  --size-h3: clamp(1.25rem, 2vw + 0.5rem, 1.5rem);
+  --size-tech-1: clamp(1.5rem, 2.5vw + 0.5rem, 2rem);
+  --size-tech-2: clamp(1.2rem, 2vw + 0.5rem, 1.225rem);
+  --size-tech-3: clamp(0.8rem, 1.5vw + 0.5rem, 0.8rem);
+  --size-lead: clamp(1.125rem, 1.5vw + 0.5rem, 1.25rem);
+  --size-base: 1rem;
+  --size-strong: 1rem;
+  --size-subtitle: 0.75rem;
 }
 
-/* Reglas base del sistema */
+/* 4. CLASES AGRUPADAS (Tu UI Kit) */
+@utility text-display {
+  font-size: var(--size-display);
+  font-weight: 800;
+  font-family: var(--font-sans);
+}
+
+@utility text-h1 {
+  font-size: var(--size-h1);
+  font-weight: 700;
+  font-family: var(--font-sans);
+}
+
+@utility text-h2 {
+  font-size: var(--size-h2);
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
+
+@utility text-h3 {
+  font-size: var(--size-h3);
+  font-weight: 700;
+  font-family: var(--font-sans);
+}
+
+@utility text-tech-1 {
+  font-size: var(--size-tech-1);
+  font-weight: 400;
+  font-family: var(--font-mono);
+}
+
+@utility text-tech-2 {
+  font-size: var(--size-tech-2);
+  font-weight: 400;
+  font-family: var(--font-mono);
+}
+
+@utility text-tech-3 {
+  font-size: var(--size-tech-3);
+  font-weight: 400;
+  font-family: var(--font-mono);
+}
+
+@utility text-lead {
+  font-size: var(--size-lead);
+  font-weight: 400;
+  font-family: var(--font-sans);
+}
+
+@utility text-base {
+  font-size: var(--size-base);
+  font-weight: 400;
+  font-family: var(--font-sans);
+}
+
+@utility text-strong {
+  font-size: var(--size-strong);
+  font-weight: 700;
+  font-family: var(--font-sans);
+}
+
+@utility text-subtitle {
+  font-size: var(--size-subtitle);
+  font-weight: 400;
+  font-family: var(--font-mono);
+}
+
+/* 5. REGLAS BASE DEL SISTEMA */
 @layer base {
   body {
     background-color: var(--color-background);
     color: var(--color-primary);
     font-family: var(--font-sans);
+  }
+
+  /* Eliminar parpadeo azul nativo en móviles */
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
   }
 }

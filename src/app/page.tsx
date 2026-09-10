@@ -1,4 +1,5 @@
-// src/app/page.tsx
+import { TechBadge } from "@/components/ui/TechBadge";
+import { TECH_STACK } from "@/data/tech.data";
 
 export default function Home() {
   return (
@@ -6,10 +7,6 @@ export default function Home() {
       {/* 1. Header de Estado del Sistema */}
       <header className="border border-primary/30 p-4 flex justify-between items-center font-mono text-subtitle">
         <span>OPERADOR: JEISI_ROSALES</span>
-        <span className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-secundary animate-pulse" />
-          STATUS: ONLINE
-        </span>
       </header>
 
       {/* 2. Banner Principal (Hero Test) */}
@@ -17,6 +14,7 @@ export default function Home() {
         <p className="font-mono text-subtitle text-accent font-bold">
           &gt; SYSTEM_READY // FULL_STACK_ENGINEER
         </p>
+        {Object.entries(TECH_STACK).map(([key, tech]) => (<TechBadge key={key} techKey={key} />))}
 
         <h1 className="font-sans text-h1 md:text-display font-extrabold uppercase leading-none tracking-tight">
           Desarrollo Web <br />
