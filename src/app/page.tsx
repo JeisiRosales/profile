@@ -1,5 +1,6 @@
 import { HeroSection } from "@/features/home/components/HeroSection";
 import { TrustSection } from "@/features/home/components/TrustSection/TrustSection";
+import { ServicesSection } from "@/features/home/components/ServiceSection";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
 
       <div className="flex flex-col gap-24 md:gap-32 py-24 md:py-32">
         <TrustSection />
+        <ServicesSection />
       </div>
     </main>
   );
