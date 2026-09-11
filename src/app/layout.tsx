@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Syne, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
+import { NavBar } from "@/components/layout/NavBar";
 import { Footer } from "@/components/layout/Footer";
 
 const syne = Syne({
@@ -38,9 +38,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${syne.variable} ${jetbrainsMono.variable}`}>
+    <html lang="es" className={`${syne.variable} ${jetbrainsMono.variable} scroll-smooth scroll-pt-24`}>
       <body>
-        <Header />
+        <NavBar />
         {children}
         <Footer />
       </body>

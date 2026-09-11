@@ -1,15 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
-import pixelIcon from "../../../public/assets/logos/pixel-icon.webp";
-
-const FOOTER_INFO = {
-    links: [
-        { label: "[ PROYECTOS ]", href: "#proyectos" },
-        { label: "[ SOLUCIONES ]", href: "#soluciones" },
-        { label: "[ SOBRE MI ]", href: "#sobre-mi" },
-        { label: "[ REPOSITORIO ]", href: "https://github.com/JeisiRosales/profile.git" },
-    ]
-};
+import pixelIcon from "@public/assets/logos/pixel-icon.webp";
+import { FOOTER_NAV } from "@/data/navigation.data";
+import { SmartLink } from "../ui/SmartLink";
 
 export function Footer() {
     return (
@@ -40,14 +32,22 @@ export function Footer() {
                     </div>
 
                     <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
-                        {FOOTER_INFO.links.map((link) => (
-                            <Link
-                                key={link.label}
+                        {FOOTER_NAV.map((link) => (
+                            link.isExternal ? <SmartLink
+                                key={link.id}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-accent transition-transform active:scale-95 duration-100 whitespace-nowrap"
+                            >
+                                {link.label}
+                            </SmartLink> : <a
+                                key={link.id}
                                 href={link.href}
                                 className="hover:text-accent transition-transform active:scale-95 duration-100 whitespace-nowrap"
                             >
                                 {link.label}
-                            </Link>
+                            </a>
                         ))}
                     </div>
 

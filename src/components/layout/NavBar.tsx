@@ -2,18 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Icon } from "@iconify/react";
-import pixelPortail from "../../../public/assets/logos/pixel-portail.webp";
+import pixelPortail from "@public/assets/logos/pixel-portail.webp";
+import { MAIN_NAV } from "@/data/navigation.data";
+import { SmartLink } from "../ui/SmartLink";
 
-const NAV_LINKS = [
-    { label: "[ PROYECTOS ]", href: "#proyectos" },
-    { label: "[ SOLUCIONES ]", href: "#soluciones" },
-    { label: "[ SOBRE MI ]", href: "#sobre-mi" },
-    { label: "[ CONTACTO ]", href: "#contacto" },
-];
-
-export function Header() {
+export function NavBar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -66,7 +60,7 @@ export function Header() {
             >
                 <div className="max-w-[1400px] mx-auto px-6 md:px-8 flex justify-between items-center">
 
-                    <Link
+                    <SmartLink
                         href="/"
                         className="relative w-10 h-10 md:w-12 md:h-12 block shrink-0 z-50"
                         onClick={() => setIsMenuOpen(false)}
@@ -78,21 +72,21 @@ export function Header() {
                             className="object-contain"
                             priority
                         />
-                    </Link>
+                    </SmartLink>
                     <div className="hidden md:flex items-center gap-8">
                         <nav className="hidden md:flex gap-8">
-                            {NAV_LINKS.map((link) => (
-                                <Link
-                                    key={link.label}
+                            {MAIN_NAV.map((link) => (
+                                <SmartLink
+                                    key={link.id}
                                     href={link.href}
                                     className="hover:text-accent transition-all duration-100 tracking-widest text-tech-3 active:scale-95"
                                 >
                                     {link.label}
-                                </Link>
+                                </SmartLink>
                             ))}
                         </nav>
 
-                        <Link
+                        <SmartLink
                             href="#contacto"
                             className={`hidden text-tech-2 md:block px-6 py-3 text-strong transition-colors ${isSolid
                                 ? "bg-accent text-primary hover:bg-cream"
@@ -100,7 +94,7 @@ export function Header() {
                                 }`}
                         >
                             ENVIAR_MENSAJE
-                        </Link>
+                        </SmartLink>
                     </div>
                     <button
                         className="md:hidden z-50 p-2 cursor-pointer transition-colors hover:text-accent"
@@ -125,28 +119,27 @@ export function Header() {
 
                 {/* 1. Eliminamos items-center y agregamos w-full para que los hijos se estiren */}
                 <nav className="flex flex-col gap-8 mt-12 w-full font-mono text-cream">
-                    {NAV_LINKS.map((link) => (
-                        <Link
-                            key={link.label}
+                    {MAIN_NAV.map((link) => (
+                        <SmartLink
+                            key={link.id}
                             href={link.href}
-                            /* 2. justify-between empuja el texto a la izquierda y el ícono a la derecha */
                             className="flex items-center justify-between w-full hover:text-accent transition-all duration-100 tracking-widest text-tech-3 active:scale-95"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             <span>{link.label}</span>
                             <Icon icon="ph:caret-right-bold" className="w-5 h-5" />
-                        </Link>
+                        </SmartLink>
                     ))}
                 </nav>
 
                 <div className="mt-auto">
-                    <Link
+                    <SmartLink
                         href="#contacto"
                         className="block w-full text-center bg-accent text-primary py-4 text-tech-2 hover:text-cream transition-all duration-100 tracking-widest text-tech-3 active:scale-95"
                         onClick={() => setIsMenuOpen(false)}
                     >
                         [ ENVIAR_MENSAJE ]
-                    </Link>
+                    </SmartLink>
                 </div>
             </div>
         </>

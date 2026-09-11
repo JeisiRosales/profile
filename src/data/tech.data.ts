@@ -1,9 +1,11 @@
+export type TechKey = keyof typeof TECH_STACK;
+
 export interface TechItem {
     name: string;
     icon: string;
 }
 
-export const TECH_STACK: Record<string, TechItem> = {
+export const TECH_STACK = {
     // FRONTEND
     nextjs: { name: "Next.js", icon: "devicon:nextjs" },
     react: { name: "React", icon: "material-icon-theme:react-ts" },
@@ -42,4 +44,4 @@ export const TECH_STACK: Record<string, TechItem> = {
     lighthouse: { name: "Lighthouse", icon: "logos:lighthouse" },
     seo: { name: "SEO", icon: "ph:trend-up-bold" },
     antigravity: { name: "Antigravity", icon: "logos:antigravity" },
-};
+} satisfies Record<string, TechItem>;
