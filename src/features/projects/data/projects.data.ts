@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
     {
         id: "kairos-center",
         slug: "kairos-center-saas",
-        title: "KAIROS CENTER",
+        title: "Kairos Center",
         category: "Custom",
         shortDescription: "SaaS de administración integral para gimnasios con control de membresías y reportes financieros.",
         fullDescription: "Plataforma multi-tenant diseñada para la gestión centralizada de centros deportivos. Permite el control detallado de membresías, recepción, alertas de vencimiento, distribución de planes y análisis financiero, respaldado por logs de actividad y un sistema robusto de importación masiva de datos.",
@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
     {
         id: "quinta-esencia",
         slug: "quinta-esencia-botica",
-        title: "QUINTA ESENCIA",
+        title: "Quinta Esencia",
         category: "Tiendas Oline",
         shortDescription: "Santuario digital con integración directa a WhatsApp para maximizar la conversión.",
         fullDescription: "Desarrollo de un e-commerce headless enfocado en la experiencia del usuario y la narrativa de la marca. Se implementó un flujo de compra sin fricción que compila el carrito y redirige al cliente a WhatsApp para cerrar la venta directamente con los dueños, humanizando el proceso comercial.",
@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
     /*{
         id: "Krumly",
         slug: "Krumly-pedidos",
-        title: "KRUMLY",
+        title: "Krumly",
         category: "Tiendas Oline",
         shortDescription: "Plataforma de agendamiento de pedidos con experiencia de usuario hiper-local.",
         fullDescription: "Tienda virtual diseñada para un emprendimiento local, optimizada para gestionar el flujo de pedidos programados. Conecta directamente el catálogo interactivo con el cliente a través de WhatsApp, facilitando la gestión de inventario diario.",
@@ -84,7 +84,7 @@ export const PROJECTS: Project[] = [
     {
         id: "jeisi-rosales-portfolio",
         slug: "portafolio-arquitectura-b2b",
-        title: "ESTE PORTAFOLIO",
+        title: "Este Portafolio",
         category: "Web",
         shortDescription: "Portafolio personal interactivo enfocado en rendimiento, SEO y diseño brutalista. (Me quedó demasiado bueno :) )",
         fullDescription: "Construcción de este portafolio interactivo utilizando Domain-Driven Design (DDD). Cuenta con un sistema de enrutamiento inteligente, animaciones delegadas a la GPU mediante Framer Motion y una base de datos relacional interna para modularizar proyectos y clientes.",

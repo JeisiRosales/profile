@@ -50,7 +50,7 @@ function ServiceCard({ service, index }: ServiceCardProps) {
                     [{service.number}]
                 </span>
 
-                <h3 className="text-strong uppercase text-cream mb-4">
+                <h3 className="text-h3 uppercase text-cream mb-4">
                     {service.title}
                 </h3>
 

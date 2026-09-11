@@ -21,7 +21,7 @@
   --size-tech-2: clamp(1.2rem, 2vw + 0.5rem, 1.225rem);
   --size-tech-3: clamp(0.8rem, 1.5vw + 0.5rem, 0.8rem);
   --size-lead: clamp(1.125rem, 1.5vw + 0.5rem, 1.25rem);
-  --size-base: 1rem;
+  --size-base: clamp(1rem, 1.2vw + 0.5rem, 1.25rem);
   --size-strong: 1rem;
   --size-subtitle: 0.75rem;
 }

@@ -35,7 +35,7 @@ const MarqueeItem = ({ client, containerRef }: { client: typeof TRUSTED_CLIENTS[
         >
             {client.logoPath ? (
                 <div
-                    className="w-full h-8 bg-primary"
+                    className="w-full h-12 bg-primary"
                     style={{
                         WebkitMaskImage: `url(${client.logoPath})`,
                         maskImage: `url(${client.logoPath})`,

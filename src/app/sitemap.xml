@@ -1,0 +1,19 @@
+import { MetadataRoute } from "next";
+import { PROJECTS } from "@/features/projects/data/projects.data";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+    const baseUrl = "https://jeisirosales.com";
+
+    const projectUrls = PROJECTS.map((project) => ({
+        url: `${baseUrl}/proyectos/${project.slug}`,
+        lastModified: new Date(project.deploymentDate),
+    }));
+
+    return [
+        {
+            url: baseUrl,
+            lastModified: new Date(),
+        },
+        ...projectUrls,
+    ];
+}

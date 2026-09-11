@@ -1,10 +1,10 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-import { TECH_STACK } from "@/data/tech.data";
+import { TECH_STACK, TechKey } from "@/data/tech.data";
 
 interface TechBadgeProps {
-    techKey?: string;
+    techKey?: TechKey;
     name?: string;
     icon?: string;
     className?: string;
@@ -17,7 +17,7 @@ export function TechBadge({ techKey, name, icon, className = "" }: TechBadgeProp
 
     return (
         <span
-            className={`inline-flex items-center gap-2 border border-primary/40 bg-cream/60 px-2.5 py-1 font-mono text-subtitle text-primary transition-colors hover:border-primary hover:bg-cream ${className}`}
+            className={`inline-flex items-center py-2 justify-center gap-2 border border-primary/40 bg-cream/30 px-2.5 py-1 font-mono text-subtitle text-primary ${className}`}
         >
             {displayIcon && (
                 <Icon icon={displayIcon} className="w-4 h-4 shrink-0" />
