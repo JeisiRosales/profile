@@ -4,9 +4,9 @@ import { Icon } from "@iconify/react";
 import background from "../../../public/assets/hero/bg-hero.webp"
 import { SOCIALS } from "@/data/social.data";
 
-export function Hero() {
+export function HeroSection() {
     return (
-        <section id="hero" className="relative w-full min-h-screen flex flex-col pt-32 pb-12 overflow-hidden">
+        <section id="hero" className="relative w-full min-h-screen flex flex-col pt-32 pb-12 overflow-hidden border border-primary">
 
             {/* =========================================
           IMAGEN DE FONDO
@@ -15,7 +15,7 @@ export function Hero() {
                 src={background}
                 alt="Textura de fondo retro tech"
                 fill
-                className="object-center object-cover z-[-1] opacity-90"
+                className="object-bottom object-cover z-[-1] opacity-90"
                 priority
             />
 

@@ -51,10 +51,9 @@ export function Footer() {
                         ))}
                     </div>
 
-                    <div className="text-center md:text-right whitespace-pre-line shrink-0">
-                        Hecho con amor y con <br />el sacrificio de mi espalda.
-                    </div>
-
+                    <span className="text-center md:text-right whitespace-pre-line shrink-0">
+                        Hecho con amor, insomnio<br />y demasiadas horas frente a la pc.
+                    </span>
                 </div>
             </div>
         </footer>
