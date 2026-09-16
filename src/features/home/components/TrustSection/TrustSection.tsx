@@ -6,7 +6,6 @@ import { TRUST_METRICS, TRUSTED_CLIENTS, TRUSTED_TESTIMONIALS, LATEST_PROJECT } 
 import { AnimatedCounter } from "./AnimatedCounter";
 import { HorizontalLogoMarquee } from "./HorizontalLogoMarquee";
 import { TestimonialGlitch } from "./TestimonialGlitch";
-import { TechBadge } from "@/components/ui/TechBadge";
 
 export function TrustSection() {
     const boxMinHeight = "min-h-[280px] md:min-h-[300px]";
@@ -42,8 +41,10 @@ export function TrustSection() {
 
                     {/* COL 2: Lo más reciente */}
                     <div className="flex flex-col h-full relative">
-                        <SmartLink
-                            href={`/${LATEST_PROJECT.slug}`}
+                        <a
+                            href={LATEST_PROJECT.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className={`group flex flex-col justify-between p-6 h-full hover:bg-primary/5 transition-colors [-webkit-tap-highlight-color:transparent] ${boxMinHeight}`}
                         >
                             <span className="text-strong uppercase text-left">
@@ -62,7 +63,7 @@ export function TrustSection() {
                             <span className="text-subtitle text-left uppercase group-hover:text-accent transition-colors">
                                 HAZ CLICK PARA VER
                             </span>
-                        </SmartLink>
+                        </a>
                     </div>
 
                     {/* COL 3: Marquee Horizontal */}

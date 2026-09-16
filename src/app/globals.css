@@ -110,4 +110,27 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Anular el fondo de autocompletado nativo del navegador (Fuerza Bruta) */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    /* 1. Sombra interior masiva usando tu variable de fondo */
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-background) inset !important;
+
+    /* 2. Forzamos el color del texto usando tu variable CSS directamente */
+    -webkit-text-fill-color: var(--color-primary) !important;
+
+    /* 3. Mantenemos el hack del tiempo como capa de seguridad extra */
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* 6. ANIMACIÓN DE CURSOR (Typewriter) */
+  @keyframes blink-caret {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
 }

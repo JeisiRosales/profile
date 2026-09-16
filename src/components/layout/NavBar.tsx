@@ -6,6 +6,7 @@ import { Icon } from "@iconify/react";
 import pixelPortail from "@public/assets/logos/pixel-portail.webp";
 import { MAIN_NAV } from "@/data/navigation.data";
 import { SmartLink } from "../ui/SmartLink";
+import { Button } from "../ui/Button";
 
 export function NavBar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -88,12 +89,12 @@ export function NavBar() {
 
                         <SmartLink
                             href="#contacto"
-                            className={`hidden text-tech-2 md:block px-6 py-3 text-strong transition-colors ${isSolid
-                                ? "bg-accent text-primary hover:bg-cream"
-                                : "bg-primary text-cream hover:bg-accent"
-                                }`}
                         >
-                            ENVIAR_MENSAJE
+                            <Button
+                                variant={isSolid ? "accent" : "solid"}
+                                size="md"
+                                label="ENVIAR_MENSAJE"
+                            />
                         </SmartLink>
                     </div>
                     <button

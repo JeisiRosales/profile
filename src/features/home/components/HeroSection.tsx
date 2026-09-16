@@ -1,10 +1,80 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { SmartLink } from "@/components/ui/SmartLink";
 import { Icon } from "@iconify/react";
 import background from "@public/assets/hero/bg-hero.webp"
 import { SOCIALS } from "@/data/social.data";
+import { Button } from "@/components/ui/Button";
+
+const FULL_TEXT = "DESARROLLO WEB DE ALTO RENDIMIENTO";
+const CHAR_DELAY_MS = 40;
 
 export function HeroSection() {
+    const [visibleCount, setVisibleCount] = useState(0);
+    const [isComplete, setIsComplete] = useState(false);
+
+    useEffect(() => {
+        if (visibleCount >= FULL_TEXT.length) {
+            setIsComplete(true);
+            return;
+        }
+
+        const timer = setTimeout(() => {
+            setVisibleCount((prev) => prev + 1);
+        }, CHAR_DELAY_MS);
+
+        return () => clearTimeout(timer);
+    }, [visibleCount]);
+
+    function renderTypewriterText() {
+        const chars: React.ReactNode[] = [];
+
+        const cursor = !isComplete ? (
+            <span
+                key="cursor"
+                className="inline-block w-[3px] h-[0.85em] bg-accent align-middle ml-[1px]"
+                style={{ animation: "blink-caret 0.7s step-end infinite" }}
+                aria-hidden="true"
+            />
+        ) : null;
+
+        // Si no hay caracteres visibles aún, cursor al inicio
+        if (visibleCount === 0 && cursor) {
+            chars.push(cursor);
+        }
+
+        for (let i = 0; i < FULL_TEXT.length; i++) {
+            // Insertar <br> después de "WEB " (posición 14 = inicio de "DE")
+            if (i === 14) {
+                chars.push(<br key="br" className="hidden md:block" />);
+            }
+
+            const isVisible = i < visibleCount;
+            chars.push(
+                <span
+                    key={i}
+                    style={{ opacity: isVisible ? 1 : 0 }}
+                >
+                    {FULL_TEXT[i]}
+                </span>
+            );
+
+            // Cursor justo después del último carácter escrito
+            if (i === visibleCount - 1 && cursor) {
+                chars.push(cursor);
+            }
+        }
+
+        return chars;
+    }
+
+    // Clases compartidas para las animaciones de entrada post-typewriter
+    const revealBase = "transition-all duration-500 ease-out";
+    const revealHidden = "opacity-0 -translate-x-8";
+    const revealVisible = "opacity-100 translate-x-0";
+
     return (
         <section id="hero" className="relative w-full min-h-screen flex flex-col pt-32 pb-12 overflow-hidden border border-primary">
 
@@ -31,26 +101,43 @@ export function HeroSection() {
                 </div>
 
                 {/* BLOQUE INFERIOR (Izquierda: Textos / Derecha: Redes) */}
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mt-20">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-12 mt-20">
                     <div className="flex flex-col max-w-4xl">
-                        <h1 className="text-h1 uppercase text-primary leading-[1.1] mb-6">
-                            DESARROLLO WEB <br className="hidden md:block" />
-                            DE ALTO RENDIMIENTO
+                        <h1
+                            className="text-h1 uppercase text-primary leading-[1.1] mb-6"
+                            aria-label="DESARROLLO WEB DE ALTO RENDIMIENTO"
+                        >
+                            {renderTypewriterText()}
                         </h1>
 
-                        <p className="text-lead text-primary/80 mb-10 max-w-xl leading-relaxed">
+                        {/* Párrafo — aparece primero (delay 0ms) */}
+                        <p
+                            className={`text-lead text-primary/80 mb-10 max-w-xl leading-relaxed ${revealBase}
+                                ${isComplete ? revealVisible : revealHidden}`}
+                        >
                             Desarrollo páginas web, e-commerce y productos digitales a medida que convierten ideas complejas en experiencias rápidas, sólidas y listas para crecer.
                         </p>
 
-                        <SmartLink
-                            href="#contacto"
-                            className="inline-flex w-fit bg-primary text-cream hover:bg-accent hover:text-primary transition-colors text-tech-2 px-8 py-4 active:scale-95 [-webkit-tap-highlight-color:transparent]"
+                        {/* CTA — aparece segundo (delay 150ms) */}
+                        <div
+                            className={`${revealBase} [transition-delay:150ms]
+                                ${isComplete ? revealVisible : revealHidden}`}
                         >
-                            COTIZAR_PROYECTO
-                        </SmartLink>
+                            <SmartLink href="#contacto">
+                                <Button
+                                    variant="solid"
+                                    size="md"
+                                    label="COTIZAR_PROYECTO"
+                                />
+                            </SmartLink>
+                        </div>
                     </div>
 
-                    <div className="flex md:flex-col text-tech-2 text-primary md:text-cream">
+                    {/* Redes sociales — aparecen tercero (delay 300ms) */}
+                    <div
+                        className={`flex md:flex-col text-tech-2 text-primary md:text-cream ${revealBase} [transition-delay:300ms]
+                            ${isComplete ? revealVisible : revealHidden}`}
+                    >
                         <a
                             href={SOCIALS[0].url!}
                             target="_blank"
