@@ -37,7 +37,7 @@ export function AboutSection() {
                 {/* HEADER ESTÁTICO */}
                 <div className="flex flex-col mb-12">
                     <h2 className="text-h2 uppercase text-primary mb-2">
-                        EL CREADOR
+                        SOBRE MÍ
                     </h2>
                     <p className="text-tech-3 text-primary/80">
                         &gt;_ STATUS: ACTIVE
@@ -55,7 +55,7 @@ export function AboutSection() {
                     <motion.div variants={itemVariants} className="mb-16">
 
                         {/* IMAGEN FLOTANTE (Float Right) */}
-                        <div className="float-right ml-6 md:ml-10 mb-4 w-32 h-32 md:w-48 md:h-48 relative overflow-hidden border border-primary shrink-0">
+                        <div className="float-right ml-6 md:ml-10 mb-4 w-32 h-32 md:w-48 md:h-48 relative overflow-hidden border border-primary/50 shrink-0">
                             {/* Cuando tengas tu foto, usa:
                             <Image src="/tu-foto.webp" alt="Jeisi Rosales" fill className="object-cover grayscale" /> 
                             */}

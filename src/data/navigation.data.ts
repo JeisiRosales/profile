@@ -16,5 +16,5 @@ export const MAIN_NAV: NavItem[] = [
 // Si tu Footer tiene links adicionales (ej: legales), los separas aquí:
 export const FOOTER_NAV: NavItem[] = [
     ...MAIN_NAV,
-    { id: "nav-github", label: "[ REPOSITORIO ]", href: "https://github.com/JeisiRosales/profile.git", isExternal: true },
+    { id: "nav-github", label: "[ REPOSITORIO ]", href: "https://github.com/JeisiRosales/profile", isExternal: true },
 ];

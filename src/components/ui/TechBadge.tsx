@@ -17,7 +17,7 @@ export function TechBadge({ techKey, name, icon, className = "" }: TechBadgeProp
 
     return (
         <span
-            className={`inline-flex items-center py-2 justify-center gap-2 border border-primary/40 bg-primary/10 px-2.5 py-1 font-mono text-subtitle text-primary ${className}`}
+            className={`inline-flex items-center py-2 justify-center gap-2 border border-primary/50 bg-primary/5 px-2.5 py-1 font-mono text-subtitle text-primary ${className}`}
         >
             {displayIcon && (
                 <Icon icon={displayIcon} className="w-4 h-4 shrink-0" />

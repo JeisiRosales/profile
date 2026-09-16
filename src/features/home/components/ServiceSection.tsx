@@ -1,7 +1,98 @@
 "use client";
 
+import { useEffect, useRef, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
+
+// ── DecryptedText (self-contained, view-triggered, center reveal) ──
+const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()";
+
+function DecryptedText({
+    text,
+    speed = 50,
+    maxIterations = 10,
+    className = "",
+}: {
+    text: string;
+    speed?: number;
+    maxIterations?: number;
+    className?: string;
+}) {
+    const containerRef = useRef<HTMLSpanElement>(null);
+    const [displayed, setDisplayed] = useState(text);
+    const [hasAnimated, setHasAnimated] = useState(false);
+
+    const scramble = useCallback(() => {
+        const len = text.length;
+        // Each character gets `maxIterations` scramble ticks before locking in.
+        // Total ticks = len * iterationsPerChar  (one char locks every `maxIterations` ticks)
+        const iterationsPerChar = maxIterations;
+        let tick = 0;
+
+        const interval = setInterval(() => {
+            tick++;
+            // How many characters are fully revealed so far
+            const revealed = Math.floor(tick / iterationsPerChar);
+
+            if (revealed >= len) {
+                clearInterval(interval);
+                setDisplayed(text);
+                return;
+            }
+
+            const next = text
+                .split("")
+                .map((char, i) => {
+                    if (char === " ") return " ";
+                    if (i < revealed) return char;          // locked in
+                    return CHARS[Math.floor(Math.random() * CHARS.length)];
+                })
+                .join("");
+
+            setDisplayed(next);
+        }, speed);
+
+        return () => clearInterval(interval);
+    }, [text, speed, maxIterations]);
+
+    useEffect(() => {
+        if (hasAnimated) return;
+        const el = containerRef.current;
+        if (!el) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setHasAnimated(true);
+                    scramble();
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.3 }
+        );
+
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, [hasAnimated, scramble]);
+
+    // Start with scrambled text so it looks encrypted before entering view
+    useEffect(() => {
+        if (!hasAnimated) {
+            setDisplayed(
+                text
+                    .split("")
+                    .map((c) => (c === " " ? " " : CHARS[Math.floor(Math.random() * CHARS.length)]))
+                    .join("")
+            );
+        }
+    }, [text, hasAnimated]);
+
+    return (
+        <span ref={containerRef} className={className}>
+            {displayed}
+        </span>
+    );
+}
 
 interface ServiceCardProps {
     service: Service;
@@ -64,10 +155,14 @@ function ServiceCard({ service, index }: ServiceCardProps) {
 
 export function ServicesSection() {
     return (
-        <section id="servicios" className="w-full py-16 md:py-24 scroll-mt-20 bg-primary">
+        <section id="servicios" className="w-full bg-primary">
             <Container>
                 <h2 className="text-h2 uppercase text-cream mb-12">
-                    SERVICIOS DE INFRAESTRUCTURA
+                    <DecryptedText
+                        text="SERVICIOS DE INFRAESTRUCTURA"
+                        speed={10}
+                        maxIterations={2}
+                    />
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 border border-cream divide-y md:divide-y-0 md:divide-x divide-cream">

@@ -5,7 +5,7 @@ export default function NotFound() {
     return (
         <section className="w-full min-h-screen flex items-center justify-center pt-16">
             <Container className="flex flex-col items-center text-center">
-                <div className="border border-primary p-12 md:p-24 flex flex-col items-center bg-background/50">
+                <div className="border border-primary/50 p-12 md:p-24 flex flex-col items-center bg-background/50">
                     <span className="text-[6rem] md:text-[10rem] leading-none text-primary mb-4">
                         [404]
                     </span>
@@ -17,7 +17,7 @@ export default function NotFound() {
                     </p>
                     <Link
                         href="/"
-                        className="text-strong uppercase border border-primary px-8 py-4 hover:bg-primary hover:text-background transition-colors"
+                        className="text-strong uppercase border border-primary/50 px-8 py-4 hover:bg-primary hover:text-background transition-colors"
                     >
                         VOLVER AL INICIO
                     </Link>

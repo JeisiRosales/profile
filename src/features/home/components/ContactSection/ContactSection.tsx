@@ -3,14 +3,14 @@ import { ContactForm } from "./ContactForm";
 
 export function ContactSection() {
     return (
-        <section id="contacto" className="w-full py-16 md:py-24 scroll-mt-20 bg-cream/20 border-y border-primary/50">
+        <section id="contacto" className="w-full bg-cream/20 border-t border-primary/50">
             <Container>
 
                 <h2 className="text-h3 text-primary uppercase tracking-widest">
                     [ SOLICITAR_CONEXIÓN ]
                 </h2>
 
-                <div className="flex flex-col my-24">
+                <div className="flex flex-col my-12">
                     <ContactForm />
                 </div>
 
@@ -19,7 +19,7 @@ export function ContactSection() {
                         ENCUENTRAME EN
                     </h3>
 
-                    <ul className="flex flex-col divide-y divide-primary/30 border-t border-b border-primary/30">
+                    <ul className="flex flex-col border-b border-primary/30 divide-y divide-primary/30">
                         <li className="flex justify-between items-center py-6">
                             <span className="text-tech-3 text-primary/80">Email</span>
                             <a href="mailto:jeisirosales2003@gmail.com" className="text-primary hover:underline hover:underline-offset-4 transition-all">

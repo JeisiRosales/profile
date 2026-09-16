@@ -76,7 +76,7 @@ export function HeroSection() {
     const revealVisible = "opacity-100 translate-x-0";
 
     return (
-        <section id="hero" className="relative w-full min-h-screen flex flex-col pt-32 pb-12 overflow-hidden border border-primary">
+        <section id="hero" className="relative w-full min-h-screen flex flex-col pt-32 pb-12 overflow-hidden">
 
             {/* IMAGEN DE FONDO */}
             <Image
@@ -103,12 +103,16 @@ export function HeroSection() {
                 {/* BLOQUE INFERIOR (Izquierda: Textos / Derecha: Redes) */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-12 mt-20">
                     <div className="flex flex-col max-w-4xl">
-                        <h1
+                        <h1 className="sr-only">
+                            Desarrollo Web de Alto Rendimiento, Software a Medida y E-commerce en Nueva Esparta
+                        </h1>
+
+                        <div
+                            aria-hidden="true"
                             className="text-h1 uppercase text-primary leading-[1.1] mb-6"
-                            aria-label="DESARROLLO WEB DE ALTO RENDIMIENTO"
                         >
                             {renderTypewriterText()}
-                        </h1>
+                        </div>
 
                         {/* Párrafo — aparece primero (delay 0ms) */}
                         <p
