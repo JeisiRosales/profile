@@ -83,11 +83,14 @@ export function HeroSection() {
                 src={background}
                 alt="Textura de fondo retro tech"
                 fill
-                className="object-bottom object-cover z-[-1] opacity-90"
+                className="object-[70%_0%] object-cover z-[-1] opacity-90"
                 priority
             />
 
-            <div className="max-w-[1400px] w-full mx-auto px-6 md:px-8 flex-1 flex flex-col justify-between relative z-10">
+            {/* OVERLAY DE LECTURA (Degradado crema desde abajo/izquierda) */}
+            <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t md:bg-gradient-to-tr from-background via-background/20  to-transparent md:via-background/20" />
+
+            <div className="max-w-[1400px] w-full mx-auto px-6 md:px-16 lg:px-32 flex-1 flex flex-col justify-between relative z-10">
 
                 {/* BLOQUE SUPERIOR (Alineado a la derecha) */}
                 <div className="flex flex-col items-end text-left mt-4 md:mt-8">

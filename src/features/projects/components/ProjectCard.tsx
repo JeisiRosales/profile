@@ -30,7 +30,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </div>
 
                 {/* DERECHA: Links de Visitar y GitHub */}
-                <div className="flex flex-row items-start gap-4 text-tech-3 text-primary hover:text-primary/70 transition-colors flex items-center">
+                <div className="flex flex-row items-start gap-2 text-tech-3 text-primary hover:text-primary/70 transition-colors flex items-center">
                     {project.liveUrl && project.id !== "jeisi-rosales-portfolio" && (
                         <a
                             href={project.liveUrl}
@@ -47,18 +47,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            | VER EN GITHUB
+                            VER REPOSITORIO
                         </a>
                     )}
                 </div>
             </div>
 
             {/* --- BLOQUE INFERIOR: Efecto marquee de highlights --- */}
-            <div className="relative flex flex-wrap w-full overflow-hidden border-b border-primary/50 bg-primary/5 p-4 md:px-6 md:py-4 md:gap-4">
+            <div className="relative flex flex-wrap w-full overflow-hidden border-y border-primary/50 bg-primary/5 p-4 md:px-6 md:py-4 md:gap-4">
                 {project.highlights.map((highlight, idx) => (
                     <span
                         key={idx}
-                        className="flex items-center text-tech-3 text-primary/80"
+                        className="flex items-center text-tech-3 md:text-subtitle text-primary/80"
                     >
                         [ • {highlight} ]
                     </span>

@@ -15,7 +15,7 @@ export function ContactSection() {
                 </div>
 
                 <div className="flex flex-col w-full">
-                    <h3 className="text-strong text-primary mb-6 uppercase">
+                    <h3 className="text-lead font-semibold text-primary mb-6 uppercase">
                         ENCUENTRAME EN
                     </h3>
 

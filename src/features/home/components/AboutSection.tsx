@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import { Container } from "@/components/ui/Container";
 import { TECH_STACK, TechKey } from "@/data/tech.data";
 import { TechBadge } from "@/components/ui/TechBadge";
+import profilePicture from "@public/assets/about/about.jpeg";
 
 const FOCUS_KEYS: TechKey[] = [
     "nextjs",
@@ -56,9 +57,7 @@ export function AboutSection() {
 
                         {/* IMAGEN FLOTANTE (Float Right) */}
                         <div className="float-right ml-6 md:ml-10 mb-4 w-32 h-32 md:w-48 md:h-48 relative overflow-hidden border border-primary/50 shrink-0">
-                            {/* Cuando tengas tu foto, usa:
-                            <Image src="/tu-foto.webp" alt="Jeisi Rosales" fill className="object-cover grayscale" /> 
-                            */}
+                            <img src={profilePicture.src} alt="Jeisi Rosales" className="w-full h-full object-cover" />
                         </div>
 
                         {/* TEXTO PRINCIPAL (Envuelve a la imagen) */}

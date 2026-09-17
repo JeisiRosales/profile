@@ -17,12 +17,12 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tudominio.com"), // Cambia esto por tu dominio real
-  title: "Jeisi Rosales | Desarrollador de Software y Arquitectura Web",
+  metadataBase: new URL("https://tudominio.com"),
+  title: "Desarrollador de software en Nueva Esparta | Jeisi Rosales",
   description: "Desarrollador Full-Stack. Construcción de sistemas web escalables, soluciones digitales para negocios y aplicaciones de alto rendimiento.",
   keywords: [
     "Desarrollador de software en Nueva Esparta",
-    "Desarrollo web Isla de Margarita",
+    "Desarrollo web Margarita",
     "Programador web en Venezuela",
     "Desarrollo de software a medida",
     "Sistemas B2B escalables",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Jeisi Rosales" }],
   creator: "Jeisi Rosales",
 
-  // 🚀 Open Graph (Redes Sociales y WhatsApp)
+  // Open Graph (Redes Sociales y WhatsApp)
   openGraph: {
     type: "website",
     locale: "es_VE",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     ],
   },
 
-  // 🐦 Twitter Card
+  // Twitter Card
   twitter: {
     card: "summary_large_image",
     title: "Jeisi Rosales | Desarrollador Full-Stack",

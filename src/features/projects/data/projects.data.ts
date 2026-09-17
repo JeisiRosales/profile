@@ -68,7 +68,7 @@ export const PROJECTS: Project[] = [
         slug: "portafolio-arquitectura-b2b",
         title: "Mí Portafolio",
         category: "Web",
-        description: "Construcción de este portafolio interactivo utilizando Domain-Driven Design (DDD). Cuenta con un sistema de enrutamiento inteligente, animaciones delegadas a la GPU mediante Framer Motion y una base de datos relacional interna para modularizar proyectos y clientes. [ Me quedó espectaular ]",
+        description: "Construcción de este portafolio interactivo utilizando Domain-Driven Design (DDD). Cuenta con un sistema de enrutamiento inteligente, animaciones delegadas a la GPU mediante Framer Motion y una base de datos relacional interna para modularizar proyectos y clientes. [ Me quedó espectacular :) ]",
         mainStack: ["nextjs", "tailwind", "framer", "cloudflare", "typescript"],
         fullStack: ["nextjs", "typescript", "tailwind", "framer", "iconify", "cleanarchitecture"],
         highlights: ["Domain-Driven Design", "Animaciones a 60fps (GPU)", "Enrutamiento Inteligente (Smart Links)", "Diseño Brutalista"],

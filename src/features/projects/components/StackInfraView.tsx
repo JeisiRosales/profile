@@ -18,7 +18,7 @@ export function StackInfraView() {
 
                     {/* Título y Stack */}
                     <div className="md:col-span-5 flex flex-col items-start gap-6">
-                        <h4 className="text-strong text-primary uppercase">{item.title}</h4>
+                        <h4 className="text-lead font-semibold text-primary uppercase">{item.title}</h4>
                         <div className="flex flex-wrap gap-2">
                             {item.techKeys.map((key) => (
                                 <TechBadge key={key} techKey={key} />

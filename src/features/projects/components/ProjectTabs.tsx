@@ -35,7 +35,7 @@ export function ProjectTabs({ tabs, activeTab, onChange }: ProjectTabsProps) {
                         onClick={() => onChange(tab.id)}
                         className={`
                             relative pb-3 md:pb-4 whitespace-nowrap
-                            text-tech-3 md:text-tech-2 tracking-widest uppercase transition-colors
+                            text-tech-2 tracking-widest uppercase transition-colors
                             shrink-0
                             ${isActive ? "text-green-800 font-bold" : "text-primary/50 hover:text-primary/80"}
                         `}

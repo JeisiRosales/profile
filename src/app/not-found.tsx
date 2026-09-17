@@ -17,7 +17,7 @@ export default function NotFound() {
                     </p>
                     <Link
                         href="/"
-                        className="text-strong uppercase border border-primary/50 px-8 py-4 hover:bg-primary hover:text-background transition-colors"
+                        className="text-h3 uppercase border border-primary/50 px-8 py-4 hover:bg-primary hover:text-background transition-colors"
                     >
                         VOLVER AL INICIO
                     </Link>
