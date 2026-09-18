@@ -7,6 +7,7 @@ import { Icon } from "@iconify/react";
 import background from "@public/assets/hero/bg-hero.webp"
 import { SOCIALS } from "@/data/social.data";
 import { Button } from "@/components/ui/Button";
+import { SvgMascot } from "@/components/ui/mascot/SvgMascot";
 
 const FULL_TEXT = "DESARROLLO WEB DE ALTO RENDIMIENTO";
 const CHAR_DELAY_MS = 40;
@@ -97,7 +98,6 @@ export function HeroSection() {
                     <span className="text-display uppercase tracking-[0.1em] text-primary leading-none mb-4 opacity-30">
                         CRAFT
                     </span>
-
                     <div className="flex flex-col gap-1 text-tech-3 text-primary opacity-50">
                         <span>&gt;_ STATUS: DISPONIBLE PARA PROYECTOS</span>
                     </div>
@@ -125,9 +125,9 @@ export function HeroSection() {
                             Desarrollo páginas web, e-commerce y productos digitales a medida que convierten ideas complejas en experiencias rápidas, sólidas y listas para crecer.
                         </p>
 
-                        {/* CTA — aparece segundo (delay 150ms) */}
+                        {/* CTA y Mascota — aparece segundo (delay 150ms) */}
                         <div
-                            className={`${revealBase} [transition-delay:150ms]
+                            className={`flex items-center gap-4 md:gap-6 ${revealBase} [transition-delay:150ms]
                                 ${isComplete ? revealVisible : revealHidden}`}
                         >
                             <SmartLink href="#contacto">
@@ -137,13 +137,19 @@ export function HeroSection() {
                                     label="COTIZAR_PROYECTO"
                                 />
                             </SmartLink>
+
+                            <SvgMascot
+                                action="idle"
+                                size={60}
+                                message="Hola! Soy JC"
+                            />
                         </div>
                     </div>
 
                     {/* Redes sociales — aparecen tercero (delay 300ms) */}
                     <div
                         className={`flex md:flex-col text-tech-2 text-primary md:text-cream ${revealBase} [transition-delay:300ms]
-                            ${isComplete ? revealVisible : revealHidden}`}
+                        ${isComplete ? revealVisible : revealHidden}`}
                     >
                         <a
                             href={SOCIALS[0].url!}

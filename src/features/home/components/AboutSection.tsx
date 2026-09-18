@@ -67,8 +67,7 @@ export function AboutSection() {
                             </p>
 
                             <p className="text-base text-primary/80 mt-8">
-                                En el backend me mueve el orden y la precisión: estructuro sistemas bajo una arquitectura limpia, analizando cada flujo y caso de usabilidad, cuido la seguridad de cada dato y documento la lógica con el rigor que un proyecto serio merece. Para mí, un buen backend no solo funciona, sino que es transparente y mantenible a largo plazo. <br /> <br />
-                                En la interfaz busco la mejor experiencia posible, desplegando en infraestructura ágil. Me involucro activamente con cada equipo o cliente: escucho, comunico cada avance con claridad y me aseguro de que el proceso sea tan fluido como el producto final.
+                                Para mí, un buen producto digital debe sentirse natural: robusto en su funcionamiento interno y completamente fluido en las manos de quien lo usa. Disfruto moverme entre la lógica compleja del sistema y los detalles visuales, asegurándome de que todo encaje sin esfuerzo. Más allá de escribir código, valoro mucho la transparencia y la comunicación; me gusta entender a fondo cada proyecto y compartir los avances con claridad, logrando que todo el proceso de desarrollo sea una experiencia tan tranquila y sin fricciones como el resultado final.
                             </p>
                         </div>
 

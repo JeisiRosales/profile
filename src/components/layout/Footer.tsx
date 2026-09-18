@@ -2,6 +2,7 @@ import Image from "next/image";
 import pixelIcon from "@public/assets/logos/pixel-icon.webp";
 import { FOOTER_NAV } from "@/data/navigation.data";
 import { SmartLink } from "../ui/SmartLink";
+import { SvgMascot } from "../ui/mascot/SvgMascot";
 
 export function Footer() {
     return (
@@ -13,7 +14,7 @@ export function Footer() {
                     </h2>
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-between items-center gap-y-8 text-tech-3 w-full">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-y-8 font-mono w-full">
 
                     <div className="flex items-center gap-4 shrink-0">
                         <div className="relative w-12 h-12 shrink-0 border border-primary/50">
@@ -25,13 +26,13 @@ export function Footer() {
                                 priority
                             />
                         </div>
-                        <div className="flex flex-col text-left">
+                        <div className="flex flex-col text-left text-tech-3 md:text-subtitle">
                             <span>Nueva Esparta</span>
                             <span>Venezuela</span>
                         </div>
                     </div>
 
-                    <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center text-subtitle">
                         {FOOTER_NAV.map((link) => (
                             link.isExternal ? <SmartLink
                                 key={link.id}
@@ -51,10 +52,22 @@ export function Footer() {
                         ))}
                     </div>
 
-                    <span className="text-center md:text-right whitespace-pre-line shrink-0">
-                        Hecho con amor, insomnio<br />y demasiadas horas frente a la pc.
-                    </span>
+                    <div className="text-center md:text-right text-tech-3 md:text-subtitle whitespace-pre-line gap-4 shrink-0 flex flex-row items-center">
+                        <p>
+                            Hecho con amor, insomnio<br />
+                            y demasiadas horas frente a la pc.
+                        </p>
+                        <SvgMascot
+                            action="work"
+                            size={50}
+                            message="Si llegaste hasta aquí significa que te gustó mi trabajo ;)"
+                            bubbleAlign="right"
+                        />
+                    </div>
                 </div>
+                <span className="text-cream text-subtitle font-mono text-center">
+                    © {new Date().getFullYear()} Jeisi Rosales. Todos los derechos reservados.
+                </span>
             </div>
         </footer>
     );

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { SmartLink } from "@/components/ui/SmartLink";
@@ -9,6 +9,7 @@ import { PROJECTS } from "../data/projects.data";
 import { ProjectTabs, TabId } from "./ProjectTabs";
 import { ProjectCard } from "./ProjectCard";
 import { StackInfraView } from "./StackInfraView";
+import { SvgMascot } from "@/components/ui/mascot/SvgMascot";
 
 const TABS: { id: TabId; label: string }[] = [
     { id: "Web", label: "WEB" },
@@ -70,8 +71,8 @@ export function ProjectsSection() {
                 </div>
 
                 {/* Call To Action Inferior */}
-                <div className="mt-16 md:mt-24 flex">
-                    <SmartLink href="#contacto">
+                <div className="mt-16 md:mt-24 flex items-center gap-4 md:gap-6 w-full">
+                    <SmartLink href="#contacto" className="shrink-0 z-10">
                         <Button
                             variant="solid"
                             size="md"
@@ -79,6 +80,36 @@ export function ProjectsSection() {
                             COTIZAR_PROYECTO
                         </Button>
                     </SmartLink>
+                    <style>{`
+                        @keyframes mascot-move-mobile {
+                            0% { left: 0%; transform: translateX(0%); }
+                            100% { left: 100%; transform: translateX(-100%); }
+                        }
+                        @keyframes mascot-move-desktop {
+                            0% { left: 0%; transform: translateX(0%); }
+                            100% { left: 30%; transform: translateX(-30%); }
+                        }
+                        .animate-mascot-project {
+                            animation: mascot-move-mobile 8s ease-in-out infinite alternate;
+                        }
+                        @media (min-width: 768px) {
+                            .animate-mascot-project {
+                                animation: mascot-move-desktop 8s ease-in-out infinite alternate;
+                            }
+                        }
+                    `}</style>
+                    <div className="flex-1 relative h-[60px]">
+                        <div
+                            className="absolute top-0 animate-mascot-project hover:[animation-play-state:paused] active:[animation-play-state:paused]"
+                        >
+                            <SvgMascot
+                                action="loop"
+                                accessory="headset"
+                                size={60}
+                                message="He ayudado en estos proyectos (o eso me gusta decir)"
+                            />
+                        </div>
+                    </div>
                 </div>
 
             </Container>

@@ -40,7 +40,7 @@ export function TestimonialGlitch({ TRUSTED_TESTIMONIALS_LIST }: { TRUSTED_TESTI
                     <p className="text-lead text-primary/70 max-w-4xl">
                         {TRUSTED_TESTIMONIALS_LIST[index].text}
                     </p>
-                    <span className="text-tech-3 uppercase text-primary/70">
+                    <span className="text-subtitle uppercase text-primary/70">
                         ~ {TRUSTED_TESTIMONIALS_LIST[index].client}
                     </span>
                 </motion.div>

@@ -36,7 +36,7 @@ export function TrustSection() {
                             <span className="text-h3 uppercase mt-4">
                                 PROYECTOS EN PRODUCCIÓN
                             </span>
-                            <span className="text-tech-3 text-primary/70 mt-2 max-w-[200px]">
+                            <span className="text-tech-3 text-primary/70 mt-2">
                                 Tiendas Online, Software a medida y más...
                             </span>
                         </div>
@@ -62,7 +62,7 @@ export function TrustSection() {
                                     </span>
                                 </div>
 
-                                <span className="text-tech-3 text-left uppercase group-hover:text-accent transition-colors">
+                                <span className="text-subtitle text-left uppercase group-hover:text-accent transition-colors">
                                     HAZ CLICK PARA VER
                                 </span>
                             </a>
@@ -78,7 +78,7 @@ export function TrustSection() {
                                 <HorizontalLogoMarquee clients={TRUSTED_CLIENTS} />
                             </div>
 
-                            <span className="text-tech-3 text-left uppercase">
+                            <span className="text-subtitle text-left uppercase">
                                 SE PARTE DE ESTA LISTA
                             </span>
                         </div>
