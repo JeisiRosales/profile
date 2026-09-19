@@ -139,7 +139,7 @@ export function NavBar() {
                         className="block w-full text-center bg-accent text-primary py-4 text-tech-2 hover:text-cream transition-all duration-100 tracking-widest text-tech-3 active:scale-95"
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        [ ENVIAR_MENSAJE ]
+                        [ ENVIAR_MENSdsdAJE ]
                     </SmartLink>
                 </div>
             </div>
