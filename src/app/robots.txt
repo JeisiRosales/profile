@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = "https://jeisirosales.com";
+    const baseUrl = "https://profile.jeisi.workers.dev";
 
     return {
         rules: {
