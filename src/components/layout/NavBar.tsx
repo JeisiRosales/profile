@@ -98,28 +98,42 @@ export function NavBar() {
                         </SmartLink>
                     </div>
                     <button
-                        className="md:hidden z-50 p-2 cursor-pointer transition-colors hover:text-accent"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        aria-label="Toggle Menu"
+                        className={`md:hidden p-2 cursor-pointer transition-colors hover:text-accent z-50 ${isMenuOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+                        onClick={() => setIsMenuOpen(true)}
+                        aria-label="Open Menu"
                     >
-                        <Icon icon={isMenuOpen ? "ph:x-bold" : "ph:list-bold"} className="w-8 h-8" />
+                        <Icon icon="pixel:bars" className="w-6 h-6" />
                     </button>
                 </div>
             </header >
 
 
+            {/* Overlay */}
+            {isMenuOpen && (
+                <div
+                    className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[55] md:hidden transition-opacity duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                />
+            )}
+
             {/* Menu Mobile */}
             <div
-                className={`fixed inset-0 bg-primary z-40 flex flex-col px-6 pt-16 pb-10 transition-transform duration-300 md:hidden overflow-hidden ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed top-0 right-0 bottom-0 w-[80%] max-w-[400px] bg-background z-[60] flex flex-col px-6 pt-6 pb-10 transition-transform duration-300 md:hidden overflow-hidden shadow-2xl ${isMenuOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
-                <Icon
-                    icon="ph:terminal-window-bold"
-                    className="absolute -bottom-12 -left-12 w-[110vw] h-[110vw] text-background/5 -z-10 pointer-events-none"
-                />
+                {/* Drawer Header */}
+                <div className="flex items-center justify-between w-full mb-8">
+                    <span className="text-primary text-h3 uppercase tracking-widest">Menú</span>
+                    <button
+                        className="p-2 -mr-2 cursor-pointer transition-colors hover:text-accent text-primary"
+                        onClick={() => setIsMenuOpen(false)}
+                        aria-label="Close Menu"
+                    >
+                        <Icon icon="ph:x-bold" className="w-6 h-6" />
+                    </button>
+                </div>
 
-                {/* 1. Eliminamos items-center y agregamos w-full para que los hijos se estiren */}
-                <nav className="flex flex-col gap-8 mt-12 w-full font-mono text-cream">
+                <nav className="flex flex-col gap-8 mt-4 w-full font-mono text-primary">
                     {MAIN_NAV.map((link) => (
                         <SmartLink
                             key={link.id}
@@ -136,10 +150,14 @@ export function NavBar() {
                 <div className="mt-auto">
                     <SmartLink
                         href="#contacto"
-                        className="block w-full text-center bg-accent text-primary py-4 text-tech-2 hover:text-cream transition-all duration-100 tracking-widest text-tech-3 active:scale-95"
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        [ ENVIAR_MENSAJE ]
+                        <Button
+                            variant="solid"
+                            size="md"
+                            label="ENVIAR_MENSAJE"
+                            className="w-full"
+                        />
                     </SmartLink>
                 </div>
             </div>

@@ -107,6 +107,7 @@ export function ProjectsSection() {
                                 accessory="headset"
                                 size={60}
                                 message="He ayudado en estos proyectos (o eso me gusta decir)"
+                                bubbleAlign="right"
                             />
                         </div>
                     </div>

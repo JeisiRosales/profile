@@ -7,6 +7,7 @@ import { Icon } from "@iconify/react";
 import { contactSchema, ContactFormValues } from "./schemas/contact.schema";
 import { submitContactAction } from "./actions/submitContact.action";
 import { Button } from "@/components/ui/Button";
+import { SvgMascot } from "@/components/ui/mascot/SvgMascot";
 
 export function ContactForm() {
     const [serverMessage, setServerMessage] = useState<{ type: "success" | "error", text: string } | null>(null);
@@ -64,7 +65,7 @@ export function ContactForm() {
 
             {/* Textarea Mensaje */}
             <div className="flex flex-col gap-2">
-                <label className="text-tech-3 text-primary/80">&gt; Cuéntame que tienes en mente...</label>
+                <label className="text-tech-3 text-primary/80">&gt; Cuéntame qué tienes en mente...</label>
                 <textarea
                     {...register("message")}
                     placeholder="¿Qué servicio quieres presupuestar?"
@@ -83,6 +84,13 @@ export function ContactForm() {
 
             {/* Botones de Acción */}
             <div className="flex items-center justify-end gap-4 mt-4">
+                <SvgMascot
+                    size={60}
+                    accessory="headset"
+                    action="idle"
+                    message="Soy capaz de hacer tus ideas realidad."
+                    bubbleAlign="left"
+                />
 
                 {/* Botón Limpiar (Icono estático) */}
                 {hasContent && (
@@ -91,7 +99,7 @@ export function ContactForm() {
                         variant="ghost"
                         onClick={() => { reset(); setServerMessage(null); }}
                         title="Limpiar formulario"
-                        className="!px-4 border-transparent hover:border-primary text-primary/60 hover:text-primary"
+                        className="border-transparent hover:border-primary text-primary/60 hover:text-primary"
                         icon={<Icon icon="ph:trash-bold" className="w-6 h-6" />}
                     />
                 )}

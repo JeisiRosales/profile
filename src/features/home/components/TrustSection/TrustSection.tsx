@@ -79,7 +79,7 @@ export function TrustSection() {
                             </div>
 
                             <span className="text-subtitle text-left uppercase">
-                                SE PARTE DE ESTA LISTA
+                                SÉ PARTE DE ESTA LISTA
                             </span>
                         </div>
                     </div>

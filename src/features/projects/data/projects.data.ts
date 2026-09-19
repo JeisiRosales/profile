@@ -66,7 +66,7 @@ export const PROJECTS: Project[] = [
     {
         id: "jeisi-rosales-portfolio",
         slug: "portafolio-arquitectura-b2b",
-        title: "Mí Portafolio",
+        title: "Mi Portafolio",
         category: "Web",
         description: "Construcción de este portafolio interactivo utilizando Domain-Driven Design (DDD). Cuenta con un sistema de enrutamiento inteligente, animaciones delegadas a la GPU mediante Framer Motion y una base de datos relacional interna para modularizar proyectos y clientes. [ Me quedó espectacular :) ]",
         mainStack: ["nextjs", "tailwind", "framer", "cloudflare", "typescript"],

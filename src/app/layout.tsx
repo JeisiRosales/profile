@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   verification: {
     google: "SmhnsOccZ7BDBIqJ4ux5aX3TS2yBOMXGYPPbZipIfKI",
   },
-  title: "Desarrollador de software en Nueva Esparta | Jeisi Rosales",
-  description: "Desarrollador Full-Stack. Construcción de sistemas web escalables, soluciones digitales para negocios y aplicaciones de alto rendimiento.",
+  title: "Desarrollador de software Isla de Margarita, Nueva Esparta | Jeisi Rosales",
+  description: "Jeisi Rosales, desarrollador Full-Stack radicado en la Isla de Margarita, Nueva Esparta. Me especializo en construir sistemas escalables y soluciones digitales a la medida para impulsar negocios.",
   keywords: [
     "Desarrollador de software en Nueva Esparta",
     "Desarrollo web Margarita",
@@ -46,11 +46,11 @@ export const metadata: Metadata = {
     locale: "es_VE",
     url: "https://profile.jeisi.workers.dev",
     title: "Jeisi Rosales | Desarrollo Web de Alto Rendimiento",
-    description: "Desarrollador Full-Stack. Construcción de sistemas web escalables, soluciones digitales para negocios y aplicaciones de alto rendimiento.",
+    description: "Jeisi Rosales, desarrollador Full-Stack radicado en la Isla de Margarita, Nueva Esparta. Me especializo en construir sistemas escalables y soluciones digitales a la medida para impulsar negocios.",
     siteName: "Jeisi Rosales Portfolio",
     images: [
       {
-        url: "/assets/logos/pixel-icon.webp",
+        url: "/assets/logos/pixel-icon.png",
         width: 1200,
         height: 630,
         alt: "Jeisi Rosales - Desarrollador Full-Stack",
@@ -62,13 +62,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Jeisi Rosales | Desarrollador Full-Stack",
-    description: "Desarrollador Full-Stack. Construcción de sistemas web escalables, soluciones digitales para negocios y aplicaciones de alto rendimiento.",
-    images: ["/assets/logos/pixel-icon.webp"],
+    description: "Jeisi Rosales, desarrollador Full-Stack radicado en la Isla de Margarita, Nueva Esparta. Me especializo en construir sistemas escalables y soluciones digitales a la medida para impulsar negocios.",
+    images: ["/assets/logos/pixel-icon.png"],
   },
 
   icons: {
-    icon: "/assets/logos/pixel-icon.webp",
-    apple: "/assets/logos/pixel-icon.webp",
+    icon: "/assets/logos/pixel-icon.png",
+    apple: "/assets/logos/pixel-icon.png",
   },
 };
 
@@ -83,6 +83,19 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
+
+        {/* Schema markup para el nombre del sitio */}
+        <Script id="schema-site-name" type="application/ld+json" strategy="beforeInteractive">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Jeisi Rosales",
+              "alternateName": "Portafolio de Jeisi Rosales",
+              "url": "https://profile.jeisi.workers.dev/"
+            }
+          `}
+        </Script>
 
         {/* Google Analytics */}
         <Script
