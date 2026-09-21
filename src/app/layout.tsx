@@ -85,14 +85,29 @@ export default function RootLayout({
         <Footer />
 
         {/* Schema markup para el nombre del sitio */}
-        <Script id="schema-site-name" type="application/ld+json" strategy="beforeInteractive">
+        <Script id="schema-person" type="application/ld+json" strategy="beforeInteractive">
           {`
             {
               "@context": "https://schema.org",
-              "@type": "WebSite",
+              "@type": "Person",
               "name": "Jeisi Rosales",
-              "alternateName": "Portafolio de Jeisi Rosales",
-              "url": "https://profile.jeisi.workers.dev/"
+              "url": "https://profile.jeisi.workers.dev/",
+              "image": "https://profile.jeisi.workers.dev/assets/logos/pixel-icon.png",
+              "jobTitle": "Desarrollador Full-Stack",
+              "description": "Desarrollador de páginas web, e-commerce y productos digitales a medida.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Isla de Margarita",
+                "addressRegion": "Nueva Esparta",
+                "addressCountry": "VE"
+              },
+              "knowsAbout": [
+                "Desarrollo Web", "React", "Next.js", "Node.js", "Arquitectura Limpia", "SEO Técnico"
+              ],
+              "sameAs": [
+                "https://github.com/JeisiRosales",
+                "https://www.linkedin.com/in/jeisi-rosales/"
+              ]
             }
           `}
         </Script>
