@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   verification: {
     google: "SmhnsOccZ7BDBIqJ4ux5aX3TS2yBOMXGYPPbZipIfKI",
   },
-  title: "Desarrollador de software Isla de Margarita, Nueva Esparta | Jeisi Rosales",
-  description: "Jeisi Rosales, desarrollador Full-Stack radicado en la Isla de Margarita, Nueva Esparta. Me especializo en construir sistemas escalables y soluciones digitales a la medida para impulsar negocios.",
+  title: "Desarrollador de software en la Isla de Margarita, Nueva Esparta | Jeisi Rosales",
+  description: "Desarrollo páginas web, e-commerce y productos digitales a medida que convierten ideas complejas en experiencias rápidas, sólidas y listas para crecer.",
   keywords: [
     "Desarrollador de software en Nueva Esparta",
     "Desarrollo web Margarita",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     locale: "es_VE",
     url: "https://profile.jeisi.workers.dev",
     title: "Jeisi Rosales | Desarrollo Web de Alto Rendimiento",
-    description: "Jeisi Rosales, desarrollador Full-Stack radicado en la Isla de Margarita, Nueva Esparta. Me especializo en construir sistemas escalables y soluciones digitales a la medida para impulsar negocios.",
+    description: "Desarrollo páginas web, e-commerce y productos digitales a medida que convierten ideas complejas en experiencias rápidas, sólidas y listas para crecer.",
     siteName: "Jeisi Rosales Portfolio",
     images: [
       {
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Jeisi Rosales | Desarrollador Full-Stack",
-    description: "Jeisi Rosales, desarrollador Full-Stack radicado en la Isla de Margarita, Nueva Esparta. Me especializo en construir sistemas escalables y soluciones digitales a la medida para impulsar negocios.",
+    description: "Desarrollo páginas web, e-commerce y productos digitales a medida que convierten ideas complejas en experiencias rápidas, sólidas y listas para crecer.",
     images: ["/assets/logos/pixel-icon.png"],
   },
 
