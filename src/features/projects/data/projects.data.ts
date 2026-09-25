@@ -72,7 +72,7 @@ export const PROJECTS: Project[] = [
         mainStack: ["nextjs", "tailwind", "framer", "cloudflare", "typescript"],
         fullStack: ["nextjs", "typescript", "tailwind", "framer", "iconify", "cleanarchitecture"],
         highlights: ["Domain-Driven Design", "Animaciones a 60fps (GPU)", "Enrutamiento Inteligente (Smart Links)", "Diseño Brutalista"],
-        deploymentDate: "2026-09-30",
+        deploymentDate: "2026-08-18",
         liveUrl: "/",
         githubUrl: "https://github.com/JeisiRosales/profile"
     }
